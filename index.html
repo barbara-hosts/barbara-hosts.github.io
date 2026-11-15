@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name | Events Host &amp; MC</title>
-<meta name="description" content="Your Name is a host and MC for weddings, conferences, galas and live shows.">
+<title>Barbara Ojei | Events Host &amp; MC</title>
+<meta name="description" content="Barbara Ojei is a host and MC for weddings, conferences, galas and live shows.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Your Name | Events Host &amp; MC">
+<meta property="og:title" content="Barbara Ojei | Events Host &amp; MC">
 <meta property="og:description" content="Host and MC for weddings, conferences, galas and live shows.">
 <meta property="og:url" content="https://barbara-hosts.github.io/">
 <meta property="og:image" content="https://barbara-hosts.github.io/og-image.png">
@@ -55,6 +55,7 @@ cite{color:var(--mute);font-style:normal}
 .quotes{display:grid;gap:56px}
 .contact{background:var(--curtain)}
 .contact p{max-width:46ch;margin-bottom:28px}
+#email-text{margin:20px 0 0;min-height:1.6em}
 footer{padding:28px 0;color:var(--mute);font-size:.9rem}
 @media(max-width:640px){
   nav a:not(.logo){margin-left:14px}
@@ -68,11 +69,11 @@ footer{padding:28px 0;color:var(--mute);font-size:.9rem}
 
 <header class="hero" id="top">
   <nav><div class="wrap">
-    <a class="logo" href="#top">YN</a>
+    <a class="logo" href="#top">BO</a>
     <div><a href="#events">Events</a><a href="#hosting">Hosting</a><a href="#kind-words">Reviews</a><a href="#book">Book</a></div>
   </div></nav>
   <div class="wrap hero-body">
-    <h1>Your<br>Name</h1>
+    <h1>Barbara<br>Ojei</h1>
     <p>Host and MC for weddings, conferences, galas and live shows. I keep the room warm and the schedule on time.</p>
     <a class="btn" href="#book">Check my availability</a>
   </div>
@@ -85,7 +86,7 @@ footer{padding:28px 0;color:var(--mute);font-size:.9rem}
     <li><span class="yr">2026</span><span class="t">Annual Tech Summit, main stage host</span><span class="m">Convention Centre, 1,200 guests</span></li>
     <li><span class="yr">2026</span><span class="t">Charity Gala Dinner, auctioneer and MC</span><span class="m">Grand Hotel, 400 guests</span></li>
     <li><span class="yr">2025</span><span class="t">Festival of Lights, live stage presenter</span><span class="m">City Park, 5,000 guests</span></li>
-    <li><span class="yr">2025</span><span class="t">Smith &amp; Jones Wedding, ceremony and reception MC</span><span class="m">Countryside Estate, 150 guests</span></li>
+    <li><span class="yr">2026</span><span class="t">Abiola &amp; Drew's Wedding, reception MC</span><span class="m">Vancouver, 75 guests</span></li>
     <li><span class="yr">2024</span><span class="t">Company Awards Night, host</span><span class="m">Riverside Theatre, 600 guests</span></li>
   </ul>
 </div></section>
@@ -110,11 +111,13 @@ footer{padding:28px 0;color:var(--mute);font-size:.9rem}
 <section class="contact" id="book"><div class="wrap">
   <h2>Book me for your event</h2>
   <p>Tell me the date, venue and expected guests. I reply within one working day.</p>
-  <a class="btn" href="mailto:you@example.com?subject=Event%20enquiry">you@example.com</a>
+  <a class="btn" id="email-btn" href="#book">Email me</a>
+<p id="email-text"></p>
+<noscript><p>Turn on JavaScript to see my email address, or message me on Instagram.</p></noscript>
 </div></section>
 </main>
 
-<footer><div class="wrap">&copy; 2026 Your Name. <a href="https://instagram.com/yourhandle">Instagram</a> &middot; <a href="https://linkedin.com/in/yourname">LinkedIn</a></div></footer>
+<footer><div class="wrap">&copy; 2026 Barbara Ojei. <a href="https://instagram.com/yourhandle">Instagram</a> &middot; <a href="https://linkedin.com/in/yourname">LinkedIn</a></div></footer>
 
 <script>
 // Spotlight follows the pointer on the hero
@@ -124,6 +127,17 @@ footer{padding:28px 0;color:var(--mute);font-size:.9rem}
     var r=hero.getBoundingClientRect();
     hero.style.setProperty('--x',(e.clientX-r.left)+'px');
     hero.style.setProperty('--y',(e.clientY-r.top)+'px');
+  });
+})();
+  // Email address is built only when the button is clicked, so it is not in the page source
+(function(){
+  var btn=document.getElementById('email-btn');
+  var out=document.getElementById('email-text');
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var addr=['blissfulbmanagement','gmail.com'].join('@');
+    out.textContent='Or copy my address: '+addr;
+    window.location.href='mailto:'+addr+'?subject=Event%20enquiry';
   });
 })();
 </script>
